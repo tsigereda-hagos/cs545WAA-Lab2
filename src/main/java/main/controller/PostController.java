@@ -32,24 +32,5 @@ public class PostController {
         postService.save(post);
     }
 
-    @PutMapping("/{id}")
-    public void update(@PathVariable("id") long postId, @RequestBody PostSimpleDto p){
-        postService.update(postId, p);
-    }
 
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable long id){
-        postService.delete(id);
-    }
-
-    @GetMapping("/author")
-    public List<PostSimpleDto> findByAuthor(@RequestParam String author) {
-        return postService.findByAuthor(author);
-    }
-
-    @GetMapping("/search")
-    public List<PostSimpleDto> findByAuthorContaining(@RequestParam String text) {
-        return postService.findByAuthorContaining(text);
-    }
 }

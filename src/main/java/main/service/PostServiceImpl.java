@@ -31,30 +31,6 @@ public class PostServiceImpl implements PostService{
         postRepo.save(modelMapper.map(p,Post.class));
     }
 
-    @Override
-    public void delete(long id) {
-        postRepo.delete(id);
 
-    }
-
-    @Override
-    public void update(long id, PostSimpleDto p) {
-        postRepo.update(id, modelMapper.map(p,Post.class));
-
-    }
-
-    @Override
-    public List<PostSimpleDto> findByAuthor(String author) {
-        return postRepo.findByAuthor(author).stream()
-                .map(post -> modelMapper.map(post, PostSimpleDto.class))
-                .collect(Collectors.toList());
-    }
-
-    @Override
-    public List<PostSimpleDto> findByAuthorContaining(String text) {
-        return postRepo.findByAuthorContaining(text).stream()
-                .map(post -> modelMapper.map(post, PostSimpleDto.class))
-                .collect(Collectors.toList());
-    }
 
 }

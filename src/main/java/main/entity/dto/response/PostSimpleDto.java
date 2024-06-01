@@ -12,5 +12,4 @@ import lombok.Setter;
 public class PostSimpleDto {
     private long id;
     private String title;
-    private String author;
 }
