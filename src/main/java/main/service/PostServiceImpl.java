@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class PostServiceImpl implements PostService{
@@ -23,7 +22,7 @@ public class PostServiceImpl implements PostService{
 
     @Override
     public PostSimpleDto findById(long id) {
-        return modelMapper.map(postRepo.getById(id), PostSimpleDto.class);
+        return modelMapper.map(postRepo.findById(id), PostSimpleDto.class);
     }
 
     @Override

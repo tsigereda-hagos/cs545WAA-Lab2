@@ -2,7 +2,6 @@ package main;
 
 import main.entity.Post;
 import main.entity.User;
-import main.repo.PostRepo;
 import main.repo.UserRepo;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +15,6 @@ import java.util.Arrays;
 @SpringBootApplication
 public class Lab2Application implements CommandLineRunner {
 
-
     @Bean
     public ModelMapper modelMapper() {
         return new ModelMapper();
@@ -24,9 +22,6 @@ public class Lab2Application implements CommandLineRunner {
 
     @Autowired
     private UserRepo userRepo;
-
-    @Autowired
-    private PostRepo postRepo;
 
     public static void main(String[] args) {
         SpringApplication.run(Lab2Application.class, args);
